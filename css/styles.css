@@ -1,0 +1,735 @@
+@font-face {
+  font-family: EvilSound;
+  src: url("../fonts/EvilSound.ttf");
+}
+@font-face {
+  font-family: HauntedWoods;
+  src: url("../fonts/HauntedWoods.ttf");
+}
+@font-face {
+  font-family: VT323;
+  src: url("../fonts/VT323-Regular.ttf");
+}
+@font-face {
+  font-family: Monumental;
+  src: url("../fonts/Monumental.ttf");
+}
+
+@import url("https://fonts.googleapis.com/css?family=Heebo");
+@import url("https://fonts.googleapis.com/css?family=Nunito Sans");
+
+*,
+::after,
+::before {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  height: 100%;
+  /* background: #1f0000; */
+  background-image: url("../images/fire.gif");
+  background-size: cover;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  font-family: Monumental, VT323, "Press Start 2P", "Roboto";
+  letter-spacing: 0.5vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 300;
+  padding: 32px 24px 24px;
+  color: #fff;
+  background-color: transparent;
+}
+
+a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+.content {
+  position: absolute;
+  padding: 32px;
+  text-align: center;
+  font-size: 22px;
+  font-family: VT323, "Press Start 2P", "Roboto";
+  width: 100%;
+
+  height: calc(100% - 108px);
+  overflow: auto;
+}
+
+#youtube {
+  display: none;
+}
+
+#merch_grid {
+  display: none;
+  width: auto;
+}
+
+#follow_content {
+  display: none;
+  width: auto;
+}
+
+div#merch_grid > img {
+  width: 31%;
+  padding: 1%;
+}
+
+#main {
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  border: 1px solid #a9a9a930;
+  background-color: #00001178;
+}
+
+#myVideo {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  max-width: 80%;
+  min-height: 80%;
+
+  z-index: 0;
+}
+
+#title {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  color: #aeaeae;
+  font-size: 64px;
+  font-weight: 500;
+}
+
+.nav-btn {
+  display: none;
+  background-color: transparent;
+}
+
+#menu {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  font-size: 50px;
+  letter-spacing: 0.75vw;
+  justify-content: space-around;
+  padding: 18px;
+}
+
+.menu-item {
+  cursor: pointer;
+}
+
+.menu-item:hover {
+  color: crimson;
+  text-shadow: 0 0 5px #ffffff, 0 0 30px #805e00, 0 0 6px #ff1500;
+}
+.menu-item:hover::before,
+.menu-item:hover::after {
+  animation-name: none;
+}
+
+.menu-item {
+  position: relative;
+  display: block;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.menu-item::before,
+.menu-item::after {
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-direction: alternate-reverse;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  clip: rect(0, 900px, 0, 0);
+  content: attr(data-text);
+}
+.menu-item::after {
+  animation-name: glitch-animation;
+  animation-duration: 4s;
+  left: 4px;
+  text-shadow: -1px 0 #ffa800;
+  background: #030000;
+}
+.menu-item::before {
+  animation-name: glitch-animation-2;
+  animation-duration: 6s;
+  left: -4px;
+  text-shadow: 1px 0 #00d8ff;
+  background: #030000;
+}
+/* Expanded Animations */
+@keyframes glitch-animation {
+  0% {
+    clip: rect(42px, 9999px, 44px, 0);
+  }
+  5% {
+    clip: rect(12px, 9999px, 59px, 0);
+  }
+  10% {
+    clip: rect(48px, 9999px, 29px, 0);
+  }
+  15% {
+    clip: rect(42px, 9999px, 73px, 0);
+  }
+  20% {
+    clip: rect(63px, 9999px, 27px, 0);
+  }
+  25% {
+    clip: rect(34px, 9999px, 55px, 0);
+  }
+  30% {
+    clip: rect(86px, 9999px, 73px, 0);
+  }
+  35% {
+    clip: rect(20px, 9999px, 20px, 0);
+  }
+  40% {
+    clip: rect(26px, 9999px, 60px, 0);
+  }
+  45% {
+    clip: rect(25px, 9999px, 66px, 0);
+  }
+  50% {
+    clip: rect(57px, 9999px, 98px, 0);
+  }
+  55% {
+    clip: rect(5px, 9999px, 46px, 0);
+  }
+  60% {
+    clip: rect(82px, 9999px, 31px, 0);
+  }
+  65% {
+    clip: rect(54px, 9999px, 27px, 0);
+  }
+  70% {
+    clip: rect(28px, 9999px, 99px, 0);
+  }
+  75% {
+    clip: rect(45px, 9999px, 69px, 0);
+  }
+  80% {
+    clip: rect(23px, 9999px, 85px, 0);
+  }
+  85% {
+    clip: rect(54px, 9999px, 84px, 0);
+  }
+  90% {
+    clip: rect(45px, 9999px, 47px, 0);
+  }
+  95% {
+    clip: rect(37px, 9999px, 20px, 0);
+  }
+  100% {
+    clip: rect(4px, 9999px, 91px, 0);
+  }
+}
+@keyframes glitch-animation-2 {
+  0% {
+    clip: rect(65px, 9999px, 100px, 0);
+  }
+  5% {
+    clip: rect(52px, 9999px, 74px, 0);
+  }
+  10% {
+    clip: rect(79px, 9999px, 85px, 0);
+  }
+  15% {
+    clip: rect(75px, 9999px, 5px, 0);
+  }
+  20% {
+    clip: rect(67px, 9999px, 61px, 0);
+  }
+  25% {
+    clip: rect(14px, 9999px, 79px, 0);
+  }
+  30% {
+    clip: rect(1px, 9999px, 66px, 0);
+  }
+  35% {
+    clip: rect(86px, 9999px, 30px, 0);
+  }
+  40% {
+    clip: rect(23px, 9999px, 98px, 0);
+  }
+  45% {
+    clip: rect(85px, 9999px, 72px, 0);
+  }
+  50% {
+    clip: rect(71px, 9999px, 75px, 0);
+  }
+  55% {
+    clip: rect(2px, 9999px, 48px, 0);
+  }
+  60% {
+    clip: rect(30px, 9999px, 16px, 0);
+  }
+  65% {
+    clip: rect(59px, 9999px, 50px, 0);
+  }
+  70% {
+    clip: rect(41px, 9999px, 62px, 0);
+  }
+  75% {
+    clip: rect(2px, 9999px, 82px, 0);
+  }
+  80% {
+    clip: rect(47px, 9999px, 73px, 0);
+  }
+  85% {
+    clip: rect(3px, 9999px, 27px, 0);
+  }
+  90% {
+    clip: rect(26px, 9999px, 55px, 0);
+  }
+  95% {
+    clip: rect(42px, 9999px, 97px, 0);
+  }
+  100% {
+    clip: rect(38px, 9999px, 49px, 0);
+  }
+}
+
+button {
+  outline: none;
+}
+.error {
+  color: #000;
+  position: absolute;
+  width: 494px;
+  height: 142px;
+  padding: 2px;
+  border: 1px outset #dedede;
+  border-color: #a3a3a3;
+  background-color: #e8e8d8;
+  opacity: 0;
+  animation: display 200ms;
+  animation-fill-mode: forwards;
+}
+.error:nth-of-type(1) {
+  top: 19%;
+  left: 24%;
+  animation-delay: 100ms;
+}
+
+.title {
+  position: relative;
+  width: 100%;
+  height: 30px;
+  margin: 0 auto;
+  padding: 0 2px 0 2px;
+  font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+  font-size: 14px;
+  color: #fff;
+  text-shadow: 0 0 #fff;
+  line-height: 30px;
+  background-image: -webkit-linear-gradient(left, #0050e0, #3890f8);
+  background-image: -moz-linear-gradient(left, #0050e0, #3890f8);
+  background-image: linear-gradient(left, #0050e0, #3890f8);
+}
+.close-button {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 25px;
+  height: 25px;
+  color: #000;
+  text-align: center;
+  font-weight: bold;
+  background-color: #e8e8d8;
+}
+.message {
+  width: 100%;
+  margin-top: 25px;
+  margin-left: 10px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+.message img {
+  float: left;
+  margin-top: -15px;
+  margin-right: 20px;
+}
+.ok {
+  position: absolute;
+  width: 100px;
+  height: 27px;
+  background-color: #e8e8d8;
+  border: 1px solid #2b2b2b;
+  box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.7);
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.ok:focus > span {
+  border: 1px dotted #000;
+}
+.ok span {
+  display: block;
+  width: 108%;
+  height: 86%;
+  margin-top: -2px;
+  margin-left: -4px;
+  line-height: 17px;
+}
+@-moz-keyframes display {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes display {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-o-keyframes display {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes display {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes glitch {
+  13% {
+    clip-path: polygon(
+      90% 55%,
+      20% 97%,
+      85% 42%,
+      20% 62%,
+      6% 55%,
+      76% 74%,
+      68% 67%,
+      49% 32%,
+      47% 41%,
+      2% 16%,
+      95% 73%,
+      68% 14%,
+      35% 81%,
+      31% 57%,
+      29% 24%,
+      57% 63%,
+      52% 91%,
+      45% 82%,
+      6% 81%,
+      82% 88%,
+      30% 61%,
+      70% 18%,
+      15% 36%,
+      16% 67%,
+      74% 84%,
+      21% 81%
+    );
+  }
+
+  53% {
+    clip-path: polygon(
+      46% 96%,
+      51% 63%,
+      92% 0%,
+      47% 85%,
+      26% 37%,
+      15% 6%,
+      16% 15%,
+      64% 28%,
+      69% 88%,
+      50% 49%,
+      29% 17%,
+      91% 74%,
+      54% 36%,
+      85% 94%,
+      89% 92%,
+      96% 22%,
+      47% 75%,
+      51% 12%,
+      12% 37%,
+      1% 41%,
+      63% 33%,
+      90% 52%,
+      48% 18%,
+      5% 56%,
+      77% 80%,
+      60% 48%
+    );
+  }
+
+  37% {
+    clip-path: polygon(
+      73% 96%,
+      32% 94%,
+      26% 33%,
+      40% 16%,
+      69% 28%,
+      72% 42%,
+      32% 33%,
+      22% 3%,
+      55% 64%,
+      79% 57%,
+      57% 39%,
+      0% 44%,
+      27% 36%,
+      17% 32%,
+      47% 35%,
+      53% 10%,
+      65% 96%,
+      72% 51%,
+      15% 56%,
+      61% 21%,
+      66% 29%,
+      33% 7%,
+      8% 86%,
+      47% 89%,
+      43% 56%,
+      98% 7%
+    );
+  }
+
+  62% {
+    clip-path: polygon(
+      44% 98%,
+      91% 91%,
+      90% 18%,
+      72% 50%,
+      63% 5%,
+      36% 64%,
+      23% 8%,
+      43% 19%,
+      88% 86%,
+      7% 22%,
+      37% 99%,
+      71% 21%,
+      76% 50%,
+      100% 73%,
+      5% 41%,
+      65% 26%,
+      19% 55%,
+      36% 5%,
+      11% 83%,
+      28% 48%,
+      36% 36%,
+      9% 64%,
+      64% 22%,
+      66% 38%,
+      80% 68%,
+      69% 76%
+    );
+  }
+
+  78% {
+    clip-path: polygon(
+      24% 46%,
+      40% 79%,
+      28% 54%,
+      98% 82%,
+      87% 67%,
+      36% 71%,
+      37% 29%,
+      89% 26%,
+      89% 21%,
+      8% 8%,
+      61% 35%,
+      4% 23%,
+      90% 77%,
+      46% 98%,
+      82% 6%,
+      76% 94%,
+      17% 52%,
+      59% 22%,
+      76% 92%,
+      39% 44%,
+      74% 97%,
+      16% 6%,
+      89% 84%,
+      80% 52%,
+      85% 55%,
+      7% 91%
+    );
+  }
+  14%,
+  39%,
+  56%,
+  64%,
+  79% {
+    clip-path: none;
+  }
+}
+
+@keyframes glitch-skew {
+  13% {
+    transform: skew(10deg, 10deg) scale(0.6);
+  }
+
+  53% {
+    transform: skew(20deg, 50deg) scale(0.6);
+  }
+
+  37% {
+    transform: skew(-83deg, 17deg) scale(0.6);
+  }
+
+  78% {
+    transform: skew(289deg, 18deg) scale(0.6);
+  }
+  14%,
+  39%,
+  56%,
+  64%,
+  79% {
+    transform: none;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  body {
+    padding: 14px;
+    /* height: calc(100% - 28px); */
+  }
+  #title {
+    font-size: 26px;
+    transition: 0.5s;
+    z-index: 3;
+  }
+  .nav-btn {
+    z-index: 2;
+    border: none;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+    display: inline-block;
+    position: absolute;
+    height: 54px;
+    width: 44px;
+    top: 24px;
+    left: 8px;
+    transition: background 0.3s;
+    animation: glitch 5s step-end infinite alternate, glitch-skew 5s step-end infinite alternate;
+  }
+  .nav-btn span {
+    position: absolute;
+    top: 15px;
+    left: 5px;
+    background: #aeaeae;
+    display: block;
+    height: 3px;
+    right: 5px;
+    transition: transform 0.3s;
+  }
+  .nav-btn span:before,
+  .nav-btn span:after {
+    width: 100%;
+    height: 3px;
+    background: #aeaeae;
+    content: "";
+    display: block;
+    left: 0;
+    position: absolute;
+  }
+  .nav-btn span:before {
+    top: -10px;
+  }
+  .nav-btn span:after {
+    bottom: -10px;
+  }
+  .active .nav-btn span {
+    transform: rotate(90deg);
+    background: crimson;
+  }
+
+  .active .nav-btn span:before,
+  .active .nav-btn span:after {
+    left: -6px;
+    background: crimson;
+  }
+  .active .nav-btn span:before {
+    top: -12px;
+  }
+  .active .nav-btn span:after {
+    bottom: -12px;
+  }
+
+  #menu {
+    width: 100%;
+    height: 100%;
+    font-size: 36px;
+    z-index: 1;
+    display: none;
+    text-align: end;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: #030000;
+  }
+  .menu-item::before,
+  .menu-item::after {
+    content: none;
+  }
+
+  .content {
+    margin-top: 64px;
+    padding: 18px;
+    max-height: calc(100% - 148px);
+    overflow: auto;
+  }
+
+  #youtube {
+    width: auto;
+  }
+  div#merch_grid > img {
+    width: 47%;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  body {
+    padding: 44px;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  body {
+    padding: 64px;
+  }
+}
