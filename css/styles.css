@@ -87,6 +87,11 @@ code {
 #follow_content {
   display: none;
   width: auto;
+  font-size: 32px;
+}
+
+#follow_content a:hover {
+  color: #ffe600;
 }
 
 div#merch_grid > img {
